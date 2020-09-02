@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo';
+  todo = '';
+  alertMessage = '';
+  todos: Array<String> = [];
+
+
+  addNewTodo(todo) {
+    if (todo) {
+      this.todos.push(todo);
+      this.alertMessage = "";
+      this.todo = '';
+    } else {
+      this.alertMessage = "Please fill up the area correctly..."
+    }
+  }
+
 }
